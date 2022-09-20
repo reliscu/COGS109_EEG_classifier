@@ -24,8 +24,7 @@ for t = 1:length(thresholds) % test varying thresholds for classifier
  
 best_predictors = [];
 used_predictors = [];
-predictor_inds_avail = 1:n_models; % predictors available as forward ...
-% ... selection progresses
+predictor_inds_avail = 1:n_models; % predictors available as forward selection progresses
 ccr = [];
 ccr_per_model = [];
  
@@ -61,7 +60,6 @@ for p = 1:n_models
                     yhat(train_inds));
                 ccr_test_temp(k) = categories(test_inds) == ...
                     yhat(test_inds);
-                % PROBLEM HERE??? ^
             end % end 'k'
             ccr_train(j) = mean(ccr_train_temp);
             ccr_test(j) = mean(ccr_test_temp);
